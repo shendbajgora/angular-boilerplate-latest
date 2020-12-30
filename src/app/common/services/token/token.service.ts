@@ -35,16 +35,16 @@ export class TokenService {
     });
   }
 
-  public isTokenExpired(key?: 'access_token' | 'refresh_token', offsetSeconds?: number): boolean {
-    const token = this.getToken(key);
+  public isTokenExpired(key?: 'access_token' | 'refresh_token', offsetSeconds?: number | undefined): boolean {
+    const token = this.getToken(key) || undefined;
 
-    return !token ? true : this.jwtInstance.isTokenExpired(token, offsetSeconds);
+    return !token ? true : this.jwt.isTokenExpired(token, offsetSeconds);
   }
 
   public tokenExpirationDate(key?: 'access_token' | 'refresh_token'): Date | null {
-    const token = this.getToken(key);
+    const token = this.getToken(key) || undefined;
 
-    return !token ? null : this.jwtInstance.getTokenExpirationDate(token);
+    return this.jwt.getTokenExpirationDate(token);
   }
 
   public getUserFromToken(key?: 'access_token' | 'refresh_token'): any {
