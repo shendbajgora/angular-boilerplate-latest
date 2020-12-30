@@ -1,18 +1,18 @@
 import { Routes } from '@angular/router';
-import { Root } from './common/constants/urls';
+import { root } from './common/constants/urls';
 import { NotFoundComponent } from './common/views/not-found/not-found.component';
 
 const routes: Routes = [
   {
-    path: Root.Auth,
+    path: root.auth,
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
-    path: Root.Account,
+    path: root.account,
     loadChildren: () => import('./account/account.module').then(m => m.AccountModule)
   },
   {
-    path: Root.Other,
+    path: root.other,
     component: NotFoundComponent
   }
 ];

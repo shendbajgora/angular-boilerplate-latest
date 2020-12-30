@@ -1,21 +1,21 @@
-enum Root {
-  Auth = 'auth',
-  Account = '',
-  Other = '**'
-}
+const root = {
+  auth: 'auth',
+  account: '',
+  other: '**'
+};
 
-enum Auth {
-  Login = 'login',
-  Register = 'register',
-  ResetPassword = 'reset-password',
-  ForgotPassword = 'forgot-password'
-}
+const auth = {
+  login: 'login',
+  register: 'register',
+  resetPassword: 'reset-password',
+  forgotPassword: 'forgot-password'
+};
 
-enum Account {
-}
+const account = {
+};
 
-const RootUrl = '/';
-const ModuleEntry = '';
-const NotFound = 'not-found';
+const rootUrl = '/';
+const moduleEntry = '';
+const notFound = 'not-found';
 
-export { Root, Auth, Account, RootUrl, ModuleEntry, NotFound };
+export { root, auth, account, rootUrl, moduleEntry, notFound };
