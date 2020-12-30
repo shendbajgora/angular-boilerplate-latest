@@ -1,5 +1,5 @@
 const general = {
-  title: '',
+  title: 'My app',
   logo: {
     original: '',
     small: '',
