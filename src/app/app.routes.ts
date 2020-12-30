@@ -1,16 +1,18 @@
 import { Routes } from '@angular/router';
+import { AuthGuard } from './common/guards/auth/auth.guard';
+import { root, views } from './common/constants/urls';
 import { NotFoundComponent } from './common/views/not-found/not-found.component';
 import { LogoutComponent } from './common/views/logout/logout.component';
-import { root, views } from './common/constants/urls';
 
 const routes: Routes = [
   {
-    path: root.auth,
-    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
-  },
-  {
     path: root.account,
     loadChildren: () => import('./account/account.module').then(m => m.AccountModule),
+    canLoad: [AuthGuard]
+  },
+  {
+    path: root.auth,
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
     path: views.logout,
@@ -22,7 +24,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: root.account,
+    redirectTo: root.auth,
     pathMatch: 'full'
   },
   {
