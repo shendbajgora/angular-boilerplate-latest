@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
-import { root } from './common/constants/urls';
 import { NotFoundComponent } from './common/views/not-found/not-found.component';
+import { LogoutComponent } from './common/views/logout/logout.component';
+import { root, views } from './common/constants/urls';
 
 const routes: Routes = [
   {
@@ -9,11 +10,24 @@ const routes: Routes = [
   },
   {
     path: root.account,
-    loadChildren: () => import('./account/account.module').then(m => m.AccountModule)
+    loadChildren: () => import('./account/account.module').then(m => m.AccountModule),
   },
   {
-    path: root.other,
+    path: views.logout,
+    component: LogoutComponent
+  },
+  {
+    path: views.notFound,
     component: NotFoundComponent
+  },
+  {
+    path: '',
+    redirectTo: root.account,
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: views.notFound
   }
 ];
 

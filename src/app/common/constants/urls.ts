@@ -1,7 +1,9 @@
+const rootUrl = '/';
+const moduleEntry = '';
+
 const root = {
   auth: 'auth',
-  account: '',
-  other: '**'
+  account: 'account',
 };
 
 const auth = {
@@ -11,11 +13,11 @@ const auth = {
   forgotPassword: 'forgot-password'
 };
 
-const account = {
+const account = {};
+
+const views = {
+  notFound: 'not-found',
+  logout: 'logout'
 };
 
-const rootUrl = '/';
-const moduleEntry = '';
-const notFound = 'not-found';
-
-export { root, auth, account, rootUrl, moduleEntry, notFound };
+export { rootUrl, moduleEntry, root, auth, account, views };
