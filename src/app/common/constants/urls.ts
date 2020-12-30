@@ -1,4 +1,4 @@
-const Root = '/';
+const RootUrl = '/';
 
 enum Auth  {
   Base = '',
@@ -12,4 +12,4 @@ enum Account {
   Base = '',
 }
 
-export { Root, Auth, Account };
+export { RootUrl, Auth, Account };
