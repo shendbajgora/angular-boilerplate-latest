@@ -1,7 +1,10 @@
-const RootUrl = '/';
+enum Root {
+  Auth = 'auth',
+  Account = '',
+  Other = '**'
+}
 
-enum Auth  {
-  Base = '',
+enum Auth {
   Login = 'login',
   Register = 'register',
   ResetPassword = 'reset-password',
@@ -9,7 +12,10 @@ enum Auth  {
 }
 
 enum Account {
-  Base = '',
 }
 
-export { RootUrl, Auth, Account };
+const ModuleEntry = '';
+const RootUrl = '/';
+const NotFound = 'not-found';
+
+export { Root, Auth, Account, ModuleEntry, RootUrl, NotFound };

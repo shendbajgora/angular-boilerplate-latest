@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { Account } from '../common/constants/urls';
+import { ModuleEntry } from '../common/constants/urls';
 import { AccountComponent } from './account.component';
 
 const routes: Routes = [
   {
-    path: Account.Base,
+    path: ModuleEntry,
     component: AccountComponent,
     children: []
   }

@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { Auth } from '../common/constants/urls';
+import { Auth, ModuleEntry } from '../common/constants/urls';
 import { AuthComponent } from './auth.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -8,7 +8,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 
 const routes: Routes = [
   {
-    path: Auth.Base,
+    path: ModuleEntry,
     component: AuthComponent,
     children: [
       {
@@ -28,7 +28,7 @@ const routes: Routes = [
         component: ResetPasswordComponent
       },
       {
-        path: Auth.Base,
+        path: ModuleEntry,
         redirectTo: Auth.Login
       }
     ]
