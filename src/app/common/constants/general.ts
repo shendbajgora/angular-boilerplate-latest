@@ -1,0 +1,4 @@
+const general = {
+  title: '',
+  logo: ''
+};

@@ -1,5 +1,7 @@
+const Root = '/';
+
 enum Auth  {
-  Base = 'auth',
+  Base = '',
   Login = 'login',
   Register = 'register',
   ResetPassword = 'reset-password',
@@ -10,4 +12,4 @@ enum Account {
   Base = '',
 }
 
-export { Auth, Account };
+export { Root, Auth, Account };

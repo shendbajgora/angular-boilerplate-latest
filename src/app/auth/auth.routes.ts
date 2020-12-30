@@ -26,6 +26,10 @@ const routes: Routes = [
       {
         path: Auth.ResetPassword,
         component: ResetPasswordComponent
+      },
+      {
+        path: Auth.Base,
+        redirectTo: Auth.Login
       }
     ]
   }
