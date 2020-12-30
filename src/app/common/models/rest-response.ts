@@ -1,3 +1,3 @@
 export interface IRestResponse<T> {
-  data: T,
+  data: T;
 }
