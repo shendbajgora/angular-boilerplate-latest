@@ -36,7 +36,7 @@ export class TokenService {
   }
 
   public isTokenExpired(key?: 'access_token' | 'refresh_token', offsetSeconds?: number | undefined): boolean {
-    const token = this.getToken(key) || undefined;
+    const token = this.getToken(key);
 
     return !token ? true : this.jwt.isTokenExpired(token, offsetSeconds);
   }

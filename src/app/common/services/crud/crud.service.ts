@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpEvent, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpEvent } from '@angular/common/http';
 
 import { environment } from '../../../../environments/environment';
 import { appendQueryParams } from '../../utils/append-params';
@@ -46,7 +46,7 @@ export class CrudService<T = any> {
     return this.http.get<IRestResponse<T>>(endpoint, options);
   }
 
-  public readAll(request: { path?: string, includes?: string[] } = { path: '' }, options?: any): Observable<HttpEvent<IRestResponse<T[]>>> {
+  public readAll(request: { path?: string, includes?: string[] } = {path: ''}, options?: any): Observable<HttpEvent<IRestResponse<T[]>>> {
 
     const endpoint = appendQueryParams(`${this.endpoint}${request.path}`, request.includes);
 
