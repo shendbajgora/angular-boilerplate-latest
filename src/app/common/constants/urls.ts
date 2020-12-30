@@ -14,8 +14,8 @@ enum Auth {
 enum Account {
 }
 
-const ModuleEntry = '';
 const RootUrl = '/';
+const ModuleEntry = '';
 const NotFound = 'not-found';
 
-export { Root, Auth, Account, ModuleEntry, RootUrl, NotFound };
+export { Root, Auth, Account, RootUrl, ModuleEntry, NotFound };
