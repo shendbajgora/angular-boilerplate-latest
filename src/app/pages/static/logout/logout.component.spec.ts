@@ -1,6 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
-import { LogoutComponent } from './logout.component';
+
+import {LogoutComponent} from './logout.component';
 
 describe('LogoutComponent', () => {
   let component: LogoutComponent;
@@ -8,7 +10,10 @@ describe('LogoutComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [LogoutComponent]
+      imports: [
+        HttpClientTestingModule,
+        LogoutComponent
+      ]
     });
     fixture = TestBed.createComponent(LogoutComponent);
     component = fixture.componentInstance;
