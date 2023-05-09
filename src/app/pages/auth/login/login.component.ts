@@ -1,12 +1,16 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { Subscription } from "rxjs";
-import { AuthService } from "@core/services";
+import {Component, inject, OnDestroy, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
+import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
+import {Subscription} from "rxjs";
+import {AuthService} from "@core/services";
 
 @Component({
   selector: 'app-login',
+  standalone: true,
   templateUrl: './login.component.html',
+  imports: [
+    ReactiveFormsModule
+  ],
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit, OnDestroy {

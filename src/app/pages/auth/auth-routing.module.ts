@@ -1,9 +1,6 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AuthComponent } from "./auth.component";
-import { LoginComponent } from "./login/login.component";
-import { ForgotPasswordComponent } from "./forgot-password/forgot-password.component";
-import { RegisterComponent } from "./register/register.component";
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {AuthComponent} from "./auth.component";
 
 const routes: Routes = [
   {
@@ -17,16 +14,16 @@ const routes: Routes = [
       },
       {
         path: 'login',
-        component: LoginComponent
+        loadComponent: () => import('./login/login.component').then((component) => component.LoginComponent),
       },
       {
         path: 'forgot-password',
-        component: ForgotPasswordComponent
+        loadComponent: () => import('./forgot-password/forgot-password.component').then((component) => component.ForgotPasswordComponent),
       },
       {
         path: 'register',
-        component: RegisterComponent
-      }
+        loadComponent: () => import('./register/register.component').then((component) => component.RegisterComponent),
+      },
     ]
   }
 ];
